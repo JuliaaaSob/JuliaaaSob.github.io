@@ -11,8 +11,8 @@ jobs:
     - name: Install Asciidoctor-PlantUml
       run: sudo gem install asciidoctor-plantuml
     - name: Process Documents
-      run: PLANTUML_URL="https://www.plantuml.com/plantuml"
-           PLANTUML_ENCODING="deflate"
+      run: set PLANTUML_URL=https://www.plantuml.com/plantuml
+           set PLANTUML_ENCODING=deflate
            asciidoctor -r asciidoctor-plantuml -D build/site -R src/docs/asciidoc **/*.adoc
     - name: Publish to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
